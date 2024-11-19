@@ -1,0 +1,26 @@
+data: file = data.txt;
+
+variable:
+  names = a b ca cb cc cd d;
+  ! a = 또래애착
+  ! b = 자기조절학습
+  ! ca = 학교적응(공부)
+  ! cb = 학교적응(친구)
+  ! cc = 학교적응(교사)
+  ! cd = 학교적응(생활)
+  ! d = 사이버비행인식
+  ! 모두 다 평균점수
+
+  classes = c(3);
+  usevar = ca cb cc cd;
+  AUXILIARY = d (BCH);
+
+analysis:
+  Type = mixture;
+  starts = 100 10;
+  LRTSTARTS = 0 0 500 200;
+  !stiteration = 100;
+plot: type = plot3;
+series = ca(*) cb(*) cc(*) cd(*);
+
+output: tech11; tech14;                                                                                                                                                                                                                     
